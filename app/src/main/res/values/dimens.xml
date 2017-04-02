@@ -1,0 +1,8 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="margin_answer_buttons_bottom">5dp</dimen>
+    <dimen name="margin_inst_a">10dp</dimen>
+    <dimen name="margin_inst_b">10dp</dimen>
+    <dimen name="margin_question">20dp</dimen>
+
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">QuizApplication</string>
+    <string name="start">Start Quiz</string>
+    <string name="next">Next Question</string>
+    <string name="welcome">Secrets of Pets Life\nQuiz App</string>
+    <string name="text_inst_a">Welcome in Secrets of Pets Life Quiz</string>
+    <string name="text_inst_b">The purpose of this game is to show You not-commonly known facts about pets</string>
+    <string name="sent_email">Sent me results</string>
+    <string name="restart">Restart Game</string>
+    <string name="results">Results page</string>
+    <string name="showResults">Results</string>
+
+
+</resources>
