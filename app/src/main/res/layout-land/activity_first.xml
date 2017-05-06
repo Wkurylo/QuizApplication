@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/first_question">
+
+    <Button
+        android:id="@+id/next_quiz"
+        style="@style/button_next_question"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:onClick="nextQuestion" />
+
+    <TextView
+        android:id="@+id/score_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text=""
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/main_body"
+        android:layout_alignParentTop="true">
+
+        <Button
+            style="@style/app_name"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/main_body"
+        android:layout_width="500dp"
+        android:layout_height="180dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/t_one"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/question"
+                    style="@style/question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/questionOne" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <TableLayout
+            android:id="@+id/answer_selection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/answer1"
+                    style="@style/answer_button"
+                    android:onClick="answer"
+                    android:text="@string/questionOneAnswerOne" />
+
+                <Button
+                    android:id="@+id/answer2"
+                    style="@style/answer_button"
+                    android:onClick="answer"
+                    android:text="@string/questionOneAnswerTwo" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/answer3"
+                    style="@style/answer_button"
+                    android:onClick="answer"
+                    android:text="@string/questionOneAnswerThree" />
+
+                <Button
+                    android:id="@+id/answer4"
+                    style="@style/answer_button"
+                    android:onClick="answer"
+                    android:text="@string/questionOneAnswerFour" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

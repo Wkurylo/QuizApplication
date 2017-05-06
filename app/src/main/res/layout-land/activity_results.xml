@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/results">
+
+    <Button
+        android:id="@+id/restart"
+        style="@style/button_restart"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:onClick="restart" />
+
+    <Button
+        android:id="@+id/sent_email"
+        style="@style/button_sent_email"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:onClick="sentEmail" />
+
+    <Button
+        android:id="@+id/show_results"
+        style="@style/button_show_results"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:onClick="submitScore" />
+
+    <TextView
+        android:id="@+id/score_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text=""
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/main_body"
+        android:layout_alignParentTop="true">
+
+        <Button
+            style="@style/app_name_result_page"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="351dp"
+            android:layout_marginRight="351dp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/main_body"
+        android:layout_width="500dp"
+        android:layout_height="180dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/t_one"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/question"
+                    style="@style/question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/scoreTake" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <EditText
+            android:id="@+id/name_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nameGive"
+            android:inputType="textCapWords" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/emailGive"
+            android:inputType="textEmailAddress" />
+
+    </LinearLayout>
+
+</RelativeLayout>

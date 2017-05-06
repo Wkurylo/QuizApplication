@@ -8,11 +8,11 @@
     <Button
         android:id="@+id/next_quiz"
         style="@style/button_next_question"
-        android:onClick="nextQuestion"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="40dp"
+        android:onClick="nextQuestion" />
 
     <TextView
         android:id="@+id/score_text_view"
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:gravity="center"
-                    android:text="How many teeth do adult cat has ?" />
+                    android:text="@string/questionOne" />
 
             </RelativeLayout>
 
@@ -80,13 +80,13 @@
                     android:id="@+id/answer1"
                     style="@style/answer_button"
                     android:onClick="answer"
-                    android:text="23" />
+                    android:text="@string/questionOneAnswerOne" />
 
                 <Button
                     android:id="@+id/answer2"
                     style="@style/answer_button"
                     android:onClick="answer"
-                    android:text="40" />
+                    android:text="@string/questionOneAnswerTwo" />
             </TableRow>
 
             <TableRow>
@@ -95,13 +95,13 @@
                     android:id="@+id/answer3"
                     style="@style/answer_button"
                     android:onClick="answer"
-                    android:text="30" />
+                    android:text="@string/questionOneAnswerThree" />
 
                 <Button
                     android:id="@+id/answer4"
                     style="@style/answer_button"
                     android:onClick="answer"
-                    android:text="12" />
+                    android:text="@string/questionOneAnswerFour" />
             </TableRow>
         </TableLayout>
 

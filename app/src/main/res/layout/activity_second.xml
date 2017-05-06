@@ -8,11 +8,11 @@
     <Button
         android:id="@+id/next_quiz"
         style="@style/button_next_question"
-        android:onClick="nextQuestion"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="40dp"
+        android:onClick="nextQuestion" />
 
     <TextView
         android:id="@+id/score_text_view"
@@ -23,6 +23,16 @@
         android:text=""
         android:textColor="@android:color/black"
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/check_text"
+        style="@style/button_check_question"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/next_quiz"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:onClick="checkAnswer" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -40,7 +50,7 @@
     <LinearLayout
         android:id="@+id/main_body"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
@@ -63,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:gravity="center"
-                    android:text="Do the turtle needs to eat salad ?" />
+                    android:text="@string/questionTwo" />
 
             </RelativeLayout>
 
@@ -71,28 +81,16 @@
 
         <TableLayout
             android:id="@+id/answer_selection"
-            android:layout_width="150dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
 
-            <TableRow>
 
-                <Button
-                    android:id="@+id/answer1"
-                    style="@style/answer_button"
-                    android:onClick="answer"
-                    android:text="Have to" />
+            <EditText
+                android:id="@+id/editText"
+                style="@style/editText"
+                android:hint="@string/editTextHint" />
 
-            </TableRow>
-            <TableRow>
-
-                <Button
-                    android:id="@+id/answer2"
-                    style="@style/answer_button"
-                    android:onClick="answer"
-                    android:text="Not to much..." />
-
-            </TableRow>
         </TableLayout>
 
     </LinearLayout>

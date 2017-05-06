@@ -8,11 +8,11 @@
     <Button
         android:id="@+id/next_quiz"
         style="@style/button_page_results"
-        android:onClick="nextQuestion"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="40dp"
+        android:onClick="nextQuestion" />
 
     <TextView
         android:id="@+id/score_text_view"
@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:gravity="center"
-                    android:text="What does stick insect eat ?" />
+                    android:text="@string/questionFour" />
 
             </RelativeLayout>
 
@@ -81,16 +81,16 @@
                     style="@style/answer_button"
                     android:gravity="center"
                     android:onClick="answer"
-                    android:textSize="23sp"
-                    android:text="Rose leaves" />
+                    android:text="@string/questionFourAnswerOne"
+                    android:textSize="23sp" />
 
                 <CheckBox
                     android:id="@+id/checkbox2"
                     style="@style/answer_button"
                     android:gravity="center"
                     android:onClick="answer"
-                    android:textSize="23sp"
-                    android:text="Tree bark" />
+                    android:text="@string/questionFourAnswerTwo"
+                    android:textSize="23sp" />
             </TableRow>
 
             <TableRow>
@@ -100,16 +100,16 @@
                     style="@style/answer_button"
                     android:gravity="center"
                     android:onClick="answer"
-                    android:textSize="23sp"
-                    android:text="dogs" />
+                    android:text="@string/questionFourAnswerThree"
+                    android:textSize="23sp" />
 
                 <CheckBox
                     android:id="@+id/checkbox4"
                     style="@style/answer_button"
                     android:gravity="center"
                     android:onClick="answer"
-                    android:textSize="23sp"
-                    android:text="Plum leaves" />
+                    android:text="@string/questionFourAnswerFour"
+                    android:textSize="23sp" />
             </TableRow>
         </TableLayout>
 

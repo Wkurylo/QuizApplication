@@ -7,15 +7,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.R.color.black;
+import static com.example.wojtekkurylo.quizapplication.R.string.questionFour;
 
 public class SecondQuestionActivity extends AppCompatActivity {
 
-    Button answer_one;
-    Button answer_two;
+    Button check_text;
+    //    Button answer_two;
     int timeToast;
     String txtToastWin;
     String txtToastLoose;
@@ -24,73 +26,72 @@ public class SecondQuestionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Bundle extras = getIntent().getExtras();
-        int score = extras.getInt("score");
+        this.score = extras.getInt("score", this.score);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        answer_one = (Button) findViewById(R.id.answer1);
-        answer_two = (Button) findViewById(R.id.answer2);
+        check_text = (Button) findViewById(R.id.check_text);
+//        answer_two = (Button) findViewById(R.id.answer2);
         timeToast = Toast.LENGTH_SHORT;
-        txtToastWin = "Yeah ! I prefer strawberries";
+        txtToastWin = "Yeah ! That is right";
         txtToastLoose = "Upss ! I prefer strawberries";
+
     }
 
     /**
-     * This method sent selected button to method check.
+     * This method sent answer to method check.
      */
-    public void answer (View view) {
-        check(answer_one, answer_two);
-
+    public void checkAnswer(View view) {
+        questionFour();
     }
+
     /**
      * Method is using If-statement
-     * This method is updating the score && changing buttons background (green/red)
-     * && text color on Black
+     * This method is updating the score and checking if answer is correct
      * Method is displaying Toast message (Win/Loose)
-     * @param one   - button one;
-     * @param two   - button two;
+     *
+     * setEnabled(false) method Is giving the user only 1 change to answer
      */
-    private void check (Button one, Button two) {
-        if (answer_two.isPressed()) {
-            one.setBackgroundResource(R.drawable.button_answer_incorrect);
-            one.setTextColor(ContextCompat.getColor(this, black));
-            two.setBackgroundResource(R.drawable.button_answer_correct);
-            two.setTextColor(ContextCompat.getColor(this, black));
+
+    public void questionFour() {
+        EditText question_four = (EditText) findViewById(R.id.editText);
+        if (question_four.getText().toString().toLowerCase().equals(getString(R.string.editTextAnswer))) {
             // Toast message - Win
             Context alfa = this;
             Toast omega = Toast.makeText(alfa, txtToastWin, timeToast);
             omega.show();
-            score =+ 1;
-            displayScore(score);
-
+            score += 1;
+            displayScore(this.score);
         } else {
-            one.setBackgroundResource(R.drawable.button_answer_incorrect);
-            one.setTextColor(ContextCompat.getColor(this, black));
-            two.setBackgroundResource(R.drawable.button_answer_correct);
-            two.setTextColor(ContextCompat.getColor(this, black));
             // Toast message - Upss !
             Context alfa = this;
             Toast omega = Toast.makeText(alfa, txtToastLoose, timeToast);
             omega.show();
-            displayScore(score);
+            displayScore(this.score);
         }
+        check_text.setEnabled(false);
     }
+
     /**
      * This method is changing activity and extracting the value of int score
      */
-    public void nextQuestion(View view){
+    public void nextQuestion(View view) {
         Intent myIntent = new Intent(SecondQuestionActivity.this, ThirdQuestionActivity.class);
-        myIntent.putExtra("score", score);
+        Bundle extras = new Bundle();
+        extras.putInt("score", this.score);
+        myIntent.putExtras(extras);
         SecondQuestionActivity.this.startActivity(myIntent);
     }
+
     /**
      * This method is just for test purpose;
      * to check If the new activity is taking the value of int score form previous activity;
      * to check If method updating the score is working correctly;
      */
     private void displayScore(int number) {
+        this.score = number;
         TextView quantityTextView = (TextView) findViewById(R.id.score_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText("" + this.score);
     }
 
 }

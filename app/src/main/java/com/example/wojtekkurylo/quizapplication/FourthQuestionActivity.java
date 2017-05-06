@@ -27,8 +27,8 @@ public class FourthQuestionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent mIntent = getIntent();
-        int score = mIntent.getIntExtra("score", 0);
+        Bundle extras = getIntent().getExtras();
+        this.score = extras.getInt("score", this.score);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fourth);
 
@@ -78,8 +78,8 @@ public class FourthQuestionActivity extends AppCompatActivity {
             Context alfa = this;
             Toast omega = Toast.makeText(alfa, txtToastWin, timeToast);
             omega.show();
-            score = +1;
-            displayScore(score);
+            this.score += 1;
+            displayScore(this.score);
 
         } else if (answer_two.isChecked() && answer_three.isChecked()) {
             one.setBackgroundResource(R.drawable.button_answer_correct);
@@ -95,7 +95,7 @@ public class FourthQuestionActivity extends AppCompatActivity {
             Context alfa = this;
             Toast omega = Toast.makeText(alfa, txtToastLoose, timeToast);
             omega.show();
-            displayScore(score);
+            displayScore(this.score);
 
         } else if (answer_two.isChecked() && answer_two.isChecked()) {
             one.setBackgroundResource(R.drawable.button_answer_correct);
@@ -111,7 +111,7 @@ public class FourthQuestionActivity extends AppCompatActivity {
             Context alfa = this;
             Toast omega = Toast.makeText(alfa, txtToastAlmost, timeToast);
             omega.show();
-            displayScore(score);
+            displayScore(this.score);
 
         } else if (answer_one.isChecked() && answer_three.isChecked()) {
             one.setBackgroundResource(R.drawable.button_answer_correct);
@@ -127,7 +127,7 @@ public class FourthQuestionActivity extends AppCompatActivity {
             Context alfa = this;
             Toast omega = Toast.makeText(alfa, txtToastAlmost, timeToast);
             omega.show();
-            displayScore(score);
+            displayScore(this.score);
 
         } else if (answer_two.isChecked() && answer_four.isChecked()) {
             one.setBackgroundResource(R.drawable.button_answer_correct);
@@ -143,7 +143,7 @@ public class FourthQuestionActivity extends AppCompatActivity {
             Context alfa = this;
             Toast omega = Toast.makeText(alfa, txtToastAlmost, timeToast);
             omega.show();
-            displayScore(score);
+            displayScore(this.score);
 
         } else if (answer_three.isChecked() && answer_four.isChecked()) {
             one.setBackgroundResource(R.drawable.button_answer_correct);
@@ -159,7 +159,7 @@ public class FourthQuestionActivity extends AppCompatActivity {
             Context alfa = this;
             Toast omega = Toast.makeText(alfa, txtToastAlmost, timeToast);
             omega.show();
-            displayScore(score);
+            displayScore(this.score);
         } else {
             // Toast message - More !
             Context alfa = this;
@@ -173,7 +173,9 @@ public class FourthQuestionActivity extends AppCompatActivity {
      */
     public void nextQuestion(View view) {
         Intent myIntent = new Intent(FourthQuestionActivity.this, ResultsQuestionActivity.class);
-        myIntent.putExtra("score", score);
+        Bundle extras = new Bundle();
+        extras.putInt("score", this.score);
+        myIntent.putExtras(extras);
         FourthQuestionActivity.this.startActivity(myIntent);
     }
 
@@ -183,7 +185,8 @@ public class FourthQuestionActivity extends AppCompatActivity {
      * to check If method updating the score is working correctly;
      */
     private void displayScore(int number) {
+        this.score = number;
         TextView quantityTextView = (TextView) findViewById(R.id.score_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText("" + this.score);
     }
 }

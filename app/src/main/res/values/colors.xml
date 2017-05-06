@@ -8,4 +8,5 @@
     <color name="t_two">#ffffff</color>
     <color name="black_txt">#000000</color>
     <color name="b_two">#00ffffff</color>
+    <color name="editTextHint">#ffffff</color>
 </resources>

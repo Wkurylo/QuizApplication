@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:gravity="center"
-                    android:text="How long is rabbit pregnancy ?" />
+                    android:text="@string/questionThree" />
 
             </RelativeLayout>
 
@@ -76,17 +76,17 @@
 
             <RadioButton
                 android:id="@+id/radioButtonOne"
+                style="@style/radio_button"
                 android:checked="false"
                 android:onClick="answer"
-                style="@style/radio_button"
-                android:text="9 months" />
+                android:text="@string/questionThreeAnswerOne" />
 
             <RadioButton
                 android:id="@+id/radioButtonTwo"
+                style="@style/radio_button"
                 android:checked="false"
                 android:onClick="answer"
-                style="@style/radio_button"
-                android:text="one month" />
+                android:text="@string/questionThreeAnswerTwo" />
 
         </RadioGroup>
 

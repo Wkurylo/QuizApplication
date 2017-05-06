@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -77,8 +77,8 @@
     </style>
 
     <style name="radio_button">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:layout_margin">@dimen/margin_answer_buttons_bottom</item>
         <item name="android:background">@drawable/button_answer</item>
@@ -118,6 +118,26 @@
         <item name="android:layout_centerInParent">true</item>
         <item name="android:background">@drawable/button_app_name</item>
         <item name="android:text">@string/restart</item>
+        <item name="android:textColor">@color/t_two</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="editText" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/editTextHint</item>
+        <item name="android:textColorHint">@color/editTextHint</item>
+    </style>
+
+    <style name="button_check_question" parent="AppTheme">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:background">@drawable/button_app_name</item>
+        <item name="android:text">@string/check</item>
         <item name="android:textColor">@color/t_two</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>

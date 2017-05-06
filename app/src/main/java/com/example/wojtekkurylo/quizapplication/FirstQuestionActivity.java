@@ -36,7 +36,7 @@ public class FirstQuestionActivity extends AppCompatActivity {
         timeToast = Toast.LENGTH_SHORT;
         txtToastWin = "Yeah ! Congrats";
         txtToastLoose = "Upss ! I am lucky You are not my doctor";
-        score = 0;
+        this.score = 0;
     }
 
     /**
@@ -51,6 +51,7 @@ public class FirstQuestionActivity extends AppCompatActivity {
      * This method is updating the score && changing buttons background (green/red)
      * && text color on Black
      * Method is displaying Toast message (Win/Loose)
+     *
      * @param one   - button one;
      * @param two   - button two;
      * @param three - button three;
@@ -70,8 +71,8 @@ public class FirstQuestionActivity extends AppCompatActivity {
             Context alfa = this;
             Toast omega = Toast.makeText(alfa, txtToastWin, timeToast);
             omega.show();
-            score = +1;
-            displayScore(score);
+            this.score += 1;
+            displayScore(this.score);
 
         } else {
             three.setBackgroundResource(R.drawable.button_answer_correct);
@@ -86,7 +87,7 @@ public class FirstQuestionActivity extends AppCompatActivity {
             Context alfa = this;
             Toast omega = Toast.makeText(alfa, txtToastLoose, timeToast);
             omega.show();
-            displayScore(score);
+            displayScore(this.score);
         }
     }
 
@@ -96,7 +97,7 @@ public class FirstQuestionActivity extends AppCompatActivity {
     public void nextQuestion(View view) {
         Intent myIntent = new Intent(FirstQuestionActivity.this, SecondQuestionActivity.class);
         Bundle extras = new Bundle();
-        extras.putInt("score", score);
+        extras.putInt("score", this.score);
         myIntent.putExtras(extras);
         FirstQuestionActivity.this.startActivity(myIntent);
     }
@@ -107,7 +108,8 @@ public class FirstQuestionActivity extends AppCompatActivity {
      * to check If method updating the score is working correctly;
      */
     private void displayScore(int number) {
+        this.score = number;
         TextView quantityTextView = (TextView) findViewById(R.id.score_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText("" + this.score);
     }
 }

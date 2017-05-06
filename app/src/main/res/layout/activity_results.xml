@@ -8,20 +8,20 @@
     <Button
         android:id="@+id/restart"
         style="@style/button_restart"
-        android:onClick="restart"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="40dp"
+        android:onClick="restart" />
 
     <Button
         android:id="@+id/sent_email"
         style="@style/button_sent_email"
-        android:layout_above="@id/restart"
-        android:onClick="sentEmail"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp" />
+        android:layout_above="@id/restart"
+        android:layout_marginBottom="40dp"
+        android:onClick="sentEmail" />
 
     <TextView
         android:id="@+id/score_text_view"
@@ -47,9 +47,9 @@
 
         <Button
             android:id="@+id/show_results"
+            style="@style/button_show_results"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            style="@style/button_show_results"
             android:onClick="submitScore" />
 
     </RelativeLayout>
@@ -80,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:gravity="center"
-                    android:text="Your score: "/>
+                    android:text="@string/scoreTake" />
 
             </RelativeLayout>
 
@@ -90,15 +90,15 @@
             android:id="@+id/name_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Write your name"
+            android:hint="@string/nameGive"
             android:inputType="textCapWords" />
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Write your email"
-            android:inputType="textEmailAddress"/>
+            android:hint="@string/emailGive"
+            android:inputType="textEmailAddress" />
 
     </LinearLayout>
 

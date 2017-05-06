@@ -23,8 +23,8 @@ public class ThirdQuestionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent mIntent = getIntent();
-        int score = mIntent.getIntExtra("score", 0);
+        Bundle extras = getIntent().getExtras();
+        this.score = extras.getInt("score", this.score);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_third);
 
@@ -77,7 +77,7 @@ public class ThirdQuestionActivity extends AppCompatActivity {
         Context alfa = this;
         Toast omega = Toast.makeText(alfa, txtToastLoose, timeToast);
         omega.show();
-        displayScore(score);
+        displayScore(this.score);
     }
 
     /**
@@ -99,8 +99,8 @@ public class ThirdQuestionActivity extends AppCompatActivity {
         Context alfa = this;
         Toast omega = Toast.makeText(alfa, txtToastWin, timeToast);
         omega.show();
-        score = +1;
-        displayScore(score);
+        this.score += 1;
+        displayScore(this.score);
     }
 
     /**
@@ -108,7 +108,9 @@ public class ThirdQuestionActivity extends AppCompatActivity {
      */
     public void nextQuestion(View view) {
         Intent myIntent = new Intent(ThirdQuestionActivity.this, FourthQuestionActivity.class);
-        myIntent.putExtra("score", score);
+        Bundle extras = new Bundle();
+        extras.putInt("score", this.score);
+        myIntent.putExtras(extras);
         ThirdQuestionActivity.this.startActivity(myIntent);
     }
 
@@ -118,7 +120,8 @@ public class ThirdQuestionActivity extends AppCompatActivity {
      * to check If method updating the score is working correctly;
      */
     private void displayScore(int number) {
+        this.score = number;
         TextView quantityTextView = (TextView) findViewById(R.id.score_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText("" + this.score);
     }
 }
